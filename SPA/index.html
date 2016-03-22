@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
 
         <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <style>
             html, body
             {
@@ -35,9 +35,9 @@
         </style>
         
         <!-- load angular via CDN -->
-        <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-        <script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
-        <script src="//code.angularjs.org/1.3.0-rc.1/angular-messages.min.js"></script>
+        <script src="http://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <script src="http://code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+        <script src="http://code.angularjs.org/1.3.0-rc.1/angular-messages.min.js"></script>
         <script src="app.js"></script>
     </head>
     <body>
@@ -51,20 +51,16 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#/second"><i></i>Second</a></li>
 				</ul>
 			</div>
 			</nav>
 		</header>
         
         <!--My view-->
-        <div class="container" ng-controller="mainController">
-
-			<div>
-                
-                <h1>{{name}}!</h1>
-                
-            </div>
+        <div class="container">
             
+            <div ng-view></div>
             
 		</div>
         <!--Controller ends-->

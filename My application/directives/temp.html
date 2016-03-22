@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ convertToDate({dt: report.dt}) | date: dateFormat}}</h3>
+    </div>
+                
+    <div class="panel-body">
+    Daytime temperature: {{ report.temp.day | convertToCel }}`C
+    </div>
+</div>

@@ -36,8 +36,8 @@
         
         <!-- load angular via CDN -->
         <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-        <script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
         <script src="//code.angularjs.org/1.3.0-rc.1/angular-messages.min.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.1/angular-resource.min.js"></script>
         <script src="app.js"></script>
     </head>
     <body>
@@ -57,14 +57,32 @@
 		</header>
         
         <!--My view-->
-        <div class="container" ng-controller="mainController">
+        <div class="container">
 
-			<div>
+			<div ng-controller="mainController">
                 
-                <h1>{{name}}!</h1>
+                <h1>Hello {{(name ? name + ". How are you?" : false) || "world"}}!</h1>
+                <div>
+                    <label>What is your twitter handle?</label>
+                    <input type="text" ng-model='handle'/>   
+                </div>
+                
+                <hr>
+                
+                <h1>twitter.com/{{ lowercasehandle() }}</h1>
+                
                 
             </div>
             
+<!--
+                <form name="myForm">
+                    <input type="text" ng-model="field" name="myField" required minlength="5" />
+                    <div ng-messages="myForm.myField.$error">
+                        <div class="alert alert-danger" ng-message="required">You did not enter a field</div>
+                        <div class="alert alert-danger" ng-message="minlength">The value entered is too short</div>
+                    </div>
+                </form>
+-->
             
 		</div>
         <!--Controller ends-->
